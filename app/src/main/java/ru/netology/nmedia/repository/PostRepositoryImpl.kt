@@ -82,7 +82,6 @@ class PostRepositoryImpl(private val dao: PostDao) : PostRepository {
             if (!response.isSuccessful) {
                 throw ApiError(response.code(), response.message())
             }
-            // если сервер возвращает обновлённый пост, можно сохранить его в БД
         } catch (e: IOException) {
             throw NetworkError
         } catch (e: Exception) {

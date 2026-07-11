@@ -151,7 +151,7 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
             _dataState.value = FeedModelState(loading = true)
             try {
                 repository.likeById(id)
-                loadPosts() // перечитываем, чтобы обновить лайки
+                loadPosts()
             } catch (e: Exception) {
                 _dataState.value = FeedModelState(error = true)
             } finally {
